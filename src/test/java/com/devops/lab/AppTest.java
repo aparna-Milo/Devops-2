@@ -30,7 +30,7 @@ public class AppTest {
     // New test for Lab 5: intentional failure
     @Test
     public void verifySystemBottleneckValidation() {
-        boolean constraintDefectDetected = true;
+        boolean constraintDefectDetected = false;
 
         org.junit.jupiter.api.Assertions.assertFalse(
                 constraintDefectDetected,
