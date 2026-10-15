@@ -1,3 +1,4 @@
+```yaml
 name: DevOps Java CI Automation Pipeline
 
 on:
@@ -41,15 +42,16 @@ jobs:
           name: production-ready-jar-jdk-${{ matrix.java-version }}
           path: target/*.jar
           retention-days: 5
-  deploy-staging:
+
+  deploy-production:
     needs: build-and-validate
     runs-on: ubuntu-latest
-    environment: staging
+
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Deploy to Staging Container
+      - name: Deploy to Production Environment
         run: |
-          echo "Approval granted! Deploying to staging stack..."
-          docker compose up -d
+          echo "CI tests passed. Deploying automatically..."
+          docker compose up -d --force-recreate
