@@ -1,4 +1,3 @@
-
 package com.devops.lab;
 
 import org.junit.jupiter.api.Test;
@@ -30,7 +29,7 @@ public class AppTest {
     // New test for Lab 5: intentional failure
     @Test
     public void verifySystemBottleneckValidation() {
-        boolean constraintDefectDetected = false;
+        boolean constraintDefectDetected = true;
 
         org.junit.jupiter.api.Assertions.assertFalse(
                 constraintDefectDetected,
@@ -38,4 +37,3 @@ public class AppTest {
         );
     }
 }
-
